@@ -5,7 +5,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.time.LocalTime
@@ -19,29 +19,66 @@ fun CardSaludo(name: String) {
         else -> "Buenas noches"
     }
 
-    Box(
+    val emoji = when {
+        horaActual < 12 -> "☀️"
+        horaActual < 18 -> "🌤️"
+        else -> "🌙"
+    }
+
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primary
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 4.dp
+        ),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 10.dp)
+            .padding(16.dp)
     ) {
-        Card(
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surfaceVariant
-            ),
+        Column(
             modifier = Modifier
-                .align(Alignment.TopCenter)
-                .padding(10.dp)
                 .fillMaxWidth()
-                .height(100.dp)
+                .padding(20.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            // Saludo principal
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = emoji,
+                    fontSize = 28.sp
+                )
+                Column {
+                    Text(
+                        text = buenos,
+                        fontSize = 16.sp,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f),
+                        style = MaterialTheme.typography.labelLarge
+                    )
+                    Text(
+                        text = name,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer,
+                        style = MaterialTheme.typography.headlineSmall
+                    )
+                }
+            }
+
+            Divider(
+                color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.2f),
+                thickness = 1.dp
+            )
+
             Text(
-                text = "$buenos $name",
-                modifier = Modifier
-                    .padding(16.dp)
-                    .fillMaxWidth(),
-                fontSize = 20.sp,
-                textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.titleMedium
+                text = "¡Todas tus metas se pueden cumplir!",
+                fontSize = 14.sp,
+                color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f),
+                style = MaterialTheme.typography.bodyMedium,
+                lineHeight = 20.sp
             )
         }
     }

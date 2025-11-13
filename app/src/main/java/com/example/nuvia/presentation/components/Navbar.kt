@@ -13,12 +13,23 @@ fun BottomNavBar(navController: NavController) {
         Screen.Profile
     )
 
-    NavigationBar {
+    NavigationBar (
+        containerColor = MaterialTheme.colorScheme.primary,
+    )
+    {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
+
         items.forEach { screen ->
             NavigationBarItem(
+                colors = NavigationBarItemDefaults.colors(
+                    indicatorColor = MaterialTheme.colorScheme.primary,
+                    selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                    selectedTextColor = MaterialTheme.colorScheme.onPrimary,
+                    unselectedIconColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f),
+                    unselectedTextColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.5f)
+                ),
                 icon = {
                     Icon(
                         imageVector = screen.icon,
