@@ -9,15 +9,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.nuvia.presentation.theme.CalmBlue
 import com.example.nuvia.presentation.theme.FogWhite
+import com.example.nuvia.presentation.components.FondoConImagen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(navController: NavController) {
     Scaffold(
+        containerColor = Color.Transparent,
+        contentColor = Color.Transparent,
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -34,26 +38,27 @@ fun ProfileScreen(navController: NavController) {
             )
         }
     ) { paddingValues ->
+        FondoConImagen(
+            overlayAlpha = 0.3f
+        ){
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(CalmBlue, FogWhite)
-                    )
-                )
                 .padding(
                     start = 16.dp,
                     end = 16.dp,
-                    top = 80.dp,
+                    top = 120.dp,
                     bottom = paddingValues.calculateBottomPadding()
                 ),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Contenido del perfil
+            Text(
+                text = "",
+                style = MaterialTheme.typography.headlineMedium,
+            )
         }
-
+        }
 
     }
 }

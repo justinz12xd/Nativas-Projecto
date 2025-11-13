@@ -27,14 +27,14 @@ fun CardSaludo(name: String) {
 
     Card(
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primary
+            containerColor = MaterialTheme.colorScheme.inverseSurface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp
         ),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .padding(top= 30.dp)
     ) {
         Column(
             modifier = Modifier
@@ -55,28 +55,28 @@ fun CardSaludo(name: String) {
                     Text(
                         text = buenos,
                         fontSize = 16.sp,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.7f),
+                        color = MaterialTheme.colorScheme.background.copy(alpha = 0.7f),
                         style = MaterialTheme.typography.labelLarge
                     )
                     Text(
                         text = name,
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer,
+                        color = MaterialTheme.colorScheme.background,
                         style = MaterialTheme.typography.headlineSmall
                     )
                 }
             }
 
             Divider(
-                color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.2f),
+                color = MaterialTheme.colorScheme.background.copy(alpha = 0.2f),
                 thickness = 1.dp
             )
 
             Text(
                 text = "¡Todas tus metas se pueden cumplir!",
                 fontSize = 14.sp,
-                color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f),
+                color = MaterialTheme.colorScheme.background.copy(alpha = 0.8f),
                 style = MaterialTheme.typography.bodyMedium,
                 lineHeight = 20.sp
             )

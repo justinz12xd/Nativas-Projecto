@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 private val DarkColors = darkColorScheme(
     primary = CalmBlue,
     secondary = GentleBlue,
-    tertiary = QuietBlue,
+    tertiary = SoftAqua,
     background = NightInk,
     surface = DeepSoftInk,
     onPrimary = Color.White,
