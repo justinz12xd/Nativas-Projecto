@@ -18,6 +18,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.nuvia.presentation.navigation.Routes
+import com.example.nuvia.presentation.theme.CalmBlue
+import com.example.nuvia.presentation.theme.CloudWhite
+import com.example.nuvia.presentation.theme.FogWhite
+import com.example.nuvia.presentation.theme.SoftInk
 import com.example.nuvia.R
 
 @Composable
@@ -39,8 +43,8 @@ fun OpenScreen(navController: NavController) {
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(
-                        Color(0xFFFFFFFF),
-                        Color(0xFFFFFFFF)
+                        FogWhite,
+                        CloudWhite
                     )
                 )
             ),
@@ -66,7 +70,7 @@ fun OpenScreen(navController: NavController) {
                 text = "Bienvenido a Nuvia",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.SemiBold,
-                color = Color.Black
+                color = SoftInk
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -74,7 +78,7 @@ fun OpenScreen(navController: NavController) {
             Text(
                 text = "Tu compañero de bienestar",
                 fontSize = 16.sp,
-                color = Color.Black.copy(alpha = 0.8f)
+                color = SoftInk.copy(alpha = 0.8f)
             )
 
             Spacer(modifier = Modifier.height(48.dp))
@@ -82,7 +86,7 @@ fun OpenScreen(navController: NavController) {
             // Botones
             Button(
                 onClick = { navController.navigate(Routes.Login.route) },
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
+                colors = ButtonDefaults.buttonColors(containerColor = CalmBlue),
                 modifier = Modifier.fillMaxWidth(0.8f)
             ) {
                 Text(text = "Iniciar sesión", color = Color.White)
@@ -93,7 +97,7 @@ fun OpenScreen(navController: NavController) {
             OutlinedButton(
                 onClick = { navController.navigate(Routes.Register.route) },
                 border = ButtonDefaults.outlinedButtonBorder,
-                colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.Black),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = SoftInk),
                 modifier = Modifier.fillMaxWidth(0.8f)
             ) {
                 Text(text = "Registrar")

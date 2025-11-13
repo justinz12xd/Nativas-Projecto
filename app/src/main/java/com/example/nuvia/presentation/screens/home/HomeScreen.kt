@@ -14,8 +14,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.nuvia.presentation.components.CardSaludo
 import com.example.nuvia.presentation.components.Screen
-import com.example.nuvia.presentation.theme.DeepBlue
-import com.example.nuvia.presentation.theme.LightBlue
+import com.example.nuvia.presentation.theme.CalmBlue
+import com.example.nuvia.presentation.theme.FogWhite
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -32,7 +32,7 @@ fun HomeScreen(navController: NavController) {
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = DeepBlue,
+                    containerColor = CalmBlue,
                     titleContentColor = MaterialTheme.colorScheme.onPrimary,
                     actionIconContentColor = MaterialTheme.colorScheme.onPrimary
                 )
@@ -45,7 +45,7 @@ fun HomeScreen(navController: NavController) {
                 .fillMaxSize()
                 .background(
                     brush = Brush.verticalGradient(
-                        colors = listOf(DeepBlue, LightBlue)
+                        colors = listOf(CalmBlue, FogWhite)
                     )
                 )
                 .padding(

@@ -2,10 +2,22 @@ package com.example.nuvia.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
-val LightBlue = Color(0xFFA7E7F5)
-val MediumBlue = Color(0xFF69C2D3)
-val TealBlue = Color(0xFF5299A7)
-val DeepBlue = Color(0xFF3C737D)
-val DarkBlue = Color(0xFF274E56)
-val VeryDarkBlue = Color(0xFF142D31)
-val NightBlue = Color(0xFF061316)
+// Blancos suaves
+val FogWhite       = Color(0xFFF4F7F8)
+val CloudWhite     = Color(0xFFEEF4F6)
+val MistWhite      = Color(0xFFE5F0F2)
+
+// Celestes pastel
+val PastelSky      = Color(0xFFAEE4FF)
+val BabySky        = Color(0xFFC7F0FF)
+val SoftAqua       = Color(0xFFB9EBF4)
+
+// Celestes suaves para contraste
+val CalmBlue       = Color(0xFF7FCDEB)
+val GentleBlue     = Color(0xFF6BBEDD)
+val QuietBlue      = Color(0xFF58A9C9)
+
+// Oscuros suaves para texto
+val SoftInk        = Color(0xFF2E3A40)
+val DeepSoftInk    = Color(0xFF1F2A2F)
+val NightInk       = Color(0xFF141A1D)
