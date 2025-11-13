@@ -27,7 +27,7 @@ class TareasViewModel : ViewModel() {
         _tareas.value = listOf(
             Tarea(
                 id = 1,
-                titulo = "Revisar emails",
+                titulo = "Trabajo Autonomo de aplicaciones Nativas",
                 descripcion = "Revisar correos pendientes",
                 fecha = LocalDate.now().plusDays(1),
                 completada = false,
@@ -35,7 +35,7 @@ class TareasViewModel : ViewModel() {
             ),
             Tarea(
                 id = 2,
-                titulo = "Reunión con equipo",
+                titulo = "Exposicion de Arquitectura del Software",
                 descripcion = "Reunión semanal de seguimiento",
                 fecha = LocalDate.now().plusDays(2),
                 completada = true,
@@ -43,7 +43,7 @@ class TareasViewModel : ViewModel() {
             ),
             Tarea(
                 id = 3,
-                titulo = "Entregar reporte",
+                titulo = "Tarea #4 de Aplicaciones Web",
                 descripcion = "Reporte mensual de actividades",
                 fecha = LocalDate.now().plusDays(3),
                 completada = false,
@@ -51,7 +51,7 @@ class TareasViewModel : ViewModel() {
             ),
             Tarea(
                 id = 4,
-                titulo = "Preparar presentación",
+                titulo = "Subir Repositorio Personal",
                 descripcion = "Preparar slides para la reunión",
                 fecha = LocalDate.now().plusDays(4),
                 completada = false,

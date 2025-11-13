@@ -15,6 +15,7 @@ import androidx.navigation.NavController
 import com.example.nuvia.presentation.theme.CalmBlue
 import com.example.nuvia.presentation.theme.FogWhite
 import com.example.nuvia.presentation.components.FondoConImagen
+import com.example.nuvia.presentation.components.perfil.PerfilCard
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -53,10 +54,7 @@ fun ProfileScreen(navController: NavController) {
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "",
-                style = MaterialTheme.typography.headlineMedium,
-            )
+            PerfilCard("Justin Zambrano", "justinalejandro996@gmail.com", "")
         }
         }
 
