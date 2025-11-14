@@ -25,8 +25,9 @@ private val LightColors = lightColorScheme(
     background = FogWhite,
     surface = CloudWhite,
     onPrimary = Color.White,
-    onSecondary = SoftInk,
-    onSurface = SoftInk
+    onSecondary = Color.Black,
+    onSurface = SoftInk,
+
 )
 
 @Composable

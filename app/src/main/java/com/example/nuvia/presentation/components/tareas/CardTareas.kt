@@ -5,8 +5,8 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.nuvia.Domain.model.Check
-import com.example.nuvia.Domain.model.Tarea
+import com.example.nuvia.domain.model.Check
+import com.example.nuvia.domain.model.Tarea
 
 @Composable
 fun CardTareas(
@@ -20,7 +20,7 @@ fun CardTareas(
     
     Card(
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.inverseSurface
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp
@@ -42,7 +42,7 @@ fun CardTareas(
             )
             
             Divider(
-                color = MaterialTheme.colorScheme.background.copy(alpha = 0.2f),
+                color = MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.2f),
                 thickness = 1.dp
             )
 

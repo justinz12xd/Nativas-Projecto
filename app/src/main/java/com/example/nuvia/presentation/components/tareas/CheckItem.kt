@@ -7,7 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.nuvia.Domain.model.Check
+import com.example.nuvia.domain.model.Check
 
 @Composable
 fun CheckItem(
@@ -30,9 +30,9 @@ fun CheckItem(
             style = MaterialTheme.typography.bodyLarge,
             fontWeight = if (check.completado) FontWeight.Normal else FontWeight.Medium,
             color = if (check.completado) 
-                MaterialTheme.colorScheme.background.copy(alpha = 0.6f)
+                MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.6f)
             else 
-                MaterialTheme.colorScheme.background,
+                MaterialTheme.colorScheme.onSecondary,
             modifier = Modifier.weight(1f)
         )
     }

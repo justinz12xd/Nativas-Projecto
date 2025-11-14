@@ -11,7 +11,7 @@ fun BottomNavBar(navController: NavController) {
     val items = listOf(
         Screen.Home,
         Screen.Profile,
-        Screen.diary
+        Screen.Diary
     )
 
     NavigationBar (

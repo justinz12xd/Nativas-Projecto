@@ -11,6 +11,7 @@ import com.example.nuvia.presentation.components.BottomNavBar
 import com.example.nuvia.presentation.components.Screen
 import com.example.nuvia.presentation.screens.home.HomeScreen
 import com.example.nuvia.presentation.screens.profile.ProfileScreen
+import com.example.nuvia.presentation.screens.diary.DiaryScreen
 
 @Composable
 fun MainScreen() {
@@ -36,10 +37,9 @@ fun MainScreen() {
                 ProfileScreen(navController = nestedNavController)
             }
             
-            // Aquí puedes agregar más pantallas en el futuro
-            // composable(Screen.Calendar.route) {
-            //     CalendarScreen(navController = nestedNavController)
-            // }
+            composable(Screen.Diary.route) {
+                DiaryScreen(navController = nestedNavController)
+            }
         }
     }
 }

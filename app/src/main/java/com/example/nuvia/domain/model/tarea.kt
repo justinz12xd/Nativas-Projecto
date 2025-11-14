@@ -1,4 +1,4 @@
-package com.example.nuvia.Domain.model
+package com.example.nuvia.domain.model
 
 import java.time.LocalDate
 

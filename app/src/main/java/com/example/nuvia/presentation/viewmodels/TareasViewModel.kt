@@ -3,9 +3,9 @@ package com.example.nuvia.presentation.viewmodels
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.nuvia.Domain.model.Check
-import com.example.nuvia.Domain.model.PrioridadTarea
-import com.example.nuvia.Domain.model.Tarea
+import com.example.nuvia.domain.model.Check
+import com.example.nuvia.domain.model.PrioridadTarea
+import com.example.nuvia.domain.model.Tarea
 import java.time.LocalDate
 
 class TareasViewModel : ViewModel() {

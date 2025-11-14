@@ -1,4 +1,4 @@
-package com.example.nuvia.Domain.model
+package com.example.nuvia.domain.model
 
 data class Usuario(
     val id_Usuario: Int,

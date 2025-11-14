@@ -7,7 +7,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.nuvia.Domain.model.Check
+import com.example.nuvia.domain.model.Check
 
 @Composable
 fun ChecksList(

@@ -3,6 +3,7 @@ package com.example.nuvia.presentation.components
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class Screen(val route: String, val title: String, val icon: ImageVector) {
@@ -18,8 +19,11 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
         icon = Icons.Default.Person
     )
     
-    // Aquí puedes agregar más pantallas en el futuro, por ejemplo:
-    // object Calendar : Screen("calendar", "Calendario", Icons.Default.CalendarMonth)
-    // object Settings : Screen("settings", "Ajustes", Icons.Default.Settings)
+    object Diary : Screen(
+        route = "diary",
+        title = "Diarios",
+        icon = Icons.Default.DateRange
+    )
+
 }
 

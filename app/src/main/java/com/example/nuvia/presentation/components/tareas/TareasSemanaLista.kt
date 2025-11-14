@@ -7,7 +7,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.nuvia.Domain.model.Tarea
+import com.example.nuvia.domain.model.Tarea
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -55,7 +55,7 @@ private fun EmptyTareasMessage(
     Text(
         text = message,
         style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+        color = MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.6f),
         modifier = modifier.padding(vertical = 16.dp)
     )
 }
