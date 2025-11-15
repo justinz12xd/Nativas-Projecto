@@ -15,7 +15,6 @@ fun NavGraph(navController: NavHostController) {
         navController = navController,
         startDestination = Routes.Splash.route
     ) {
-        //En esta parte creo que irian las rutas sin navbar
         composable(Routes.Splash.route) {
             OpenScreen(navController = navController)
         }

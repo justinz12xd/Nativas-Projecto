@@ -55,7 +55,7 @@ private fun EmptyTareasMessage(
     Text(
         text = message,
         style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.6f),
+        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
         modifier = modifier.padding(vertical = 16.dp)
     )
 }

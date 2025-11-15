@@ -52,14 +52,14 @@ private fun TareaContent(
             style = MaterialTheme.typography.bodyLarge,
             fontWeight = if (tarea.completada) FontWeight.Normal else FontWeight.Medium,
             color = if (tarea.completada) 
-                MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.6f)
+                MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
             else 
-                MaterialTheme.colorScheme.onSecondary
+                MaterialTheme.colorScheme.onSurface
         )
         Text(
             text = tarea.fecha.format(formatter),
             style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.5f)
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
         )
     }
 }

@@ -42,7 +42,7 @@ fun CardTareas(
             )
             
             Divider(
-                color = MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.2f),
+                color = MaterialTheme.colorScheme.outline.copy(alpha = 0.5f),
                 thickness = 1.dp
             )
 

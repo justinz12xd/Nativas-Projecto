@@ -30,9 +30,9 @@ fun CheckItem(
             style = MaterialTheme.typography.bodyLarge,
             fontWeight = if (check.completado) FontWeight.Normal else FontWeight.Medium,
             color = if (check.completado) 
-                MaterialTheme.colorScheme.onSecondary.copy(alpha = 0.6f)
+                MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
             else 
-                MaterialTheme.colorScheme.onSecondary,
+                MaterialTheme.colorScheme.onSurface,
             modifier = Modifier.weight(1f)
         )
     }

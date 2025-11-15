@@ -1,4 +1,4 @@
-package com.example.nuvia.domain.usecase
+package com.example.nuvia.domain.usecase.Diary
 
 import com.example.nuvia.domain.repository.DiaryRepository
 

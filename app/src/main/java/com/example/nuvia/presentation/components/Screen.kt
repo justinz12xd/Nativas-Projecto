@@ -1,6 +1,7 @@
 package com.example.nuvia.presentation.components
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.DateRange
@@ -8,7 +9,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class Screen(val route: String, val title: String, val icon: ImageVector) {
     object Home : Screen(
-        route = "home",
+        route = "com/example/nuvia/presentation/components/home",
         title = "Inicio",
         icon = Icons.Default.Home
     )
@@ -22,8 +23,14 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
     object Diary : Screen(
         route = "diary",
         title = "Diarios",
+        icon = Icons.Default.Book
+    )
+    object Calendario : Screen(
+        route = "calendario",
+        title = "Calendario",
         icon = Icons.Default.DateRange
     )
+
 
 }
 

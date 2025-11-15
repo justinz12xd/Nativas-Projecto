@@ -3,7 +3,8 @@ package com.example.nuvia.presentation.screens.diary
 import androidx.compose.runtime.*
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.nuvia.domain.usecase.GetDiaryEntriesUseCase
+import com.example.nuvia.domain.usecase.Diary.GetDiaryEntriesUseCase
+import com.example.nuvia.domain.usecase.Calendar.GetFechasImportantes
 import com.example.nuvia.domain.usecase.SaveDiaryEntryUseCase
 import kotlinx.coroutines.launch
 

@@ -2,25 +2,31 @@ package com.example.nuvia.presentation.screens.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.nuvia.presentation.components.CardSaludo
+import com.example.nuvia.presentation.components.home.CardSaludo
 import com.example.nuvia.presentation.components.Screen
 import com.example.nuvia.presentation.components.tareas.CardTareas
 import com.example.nuvia.presentation.theme.CalmBlue
 import com.example.nuvia.presentation.viewmodels.TareasViewModel
+import com.example.nuvia.presentation.viewmodels.TareasViewModelFactory
 import com.example.nuvia.presentation.components.FondoConImagen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController: NavController) {
-    val viewModel: TareasViewModel = viewModel()
+    val viewModel: TareasViewModel = viewModel(factory = TareasViewModelFactory())
+    val tareas by viewModel.tareas.collectAsState()
+    val checks by viewModel.checks.collectAsState()
     
     Scaffold(
         topBar = {
@@ -28,13 +34,13 @@ fun HomeScreen(navController: NavController) {
                 title = { Text("Refugio") },
                 actions = {
                     IconButton(onClick = {
-                        navController.navigate(Screen.Profile.route)
+                        navController.navigate(Screen.Calendario.route)
                     }) {
-                        Icon(Icons.Default.Person, contentDescription = "Perfil")
+                        Icon(Icons.Default.DateRange, contentDescription = "Calendario")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = CalmBlue,
+                    containerColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = MaterialTheme.colorScheme.onPrimary,
                     actionIconContentColor = MaterialTheme.colorScheme.onPrimary
                 )
@@ -57,9 +63,10 @@ fun HomeScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 CardSaludo(name = "Justin")
+
                 CardTareas(
-                    tareas = viewModel.tareas,
-                    checks = viewModel.checks,
+                    tareas = tareas,
+                    checks = checks,
                     onTareaToggle = { id -> viewModel.toggleTarea(id) },
                     onCheckToggle = { id -> viewModel.toggleCheck(id) }
                 )

@@ -18,10 +18,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.nuvia.presentation.navigation.Routes
-import com.example.nuvia.presentation.theme.CalmBlue
-import com.example.nuvia.presentation.theme.CloudWhite
-import com.example.nuvia.presentation.theme.FogWhite
-import com.example.nuvia.presentation.theme.SoftInk
 import com.example.nuvia.R
 
 @Composable
@@ -43,8 +39,8 @@ fun OpenScreen(navController: NavController) {
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(
-                        FogWhite,
-                        CloudWhite
+                        MaterialTheme.colorScheme.background,
+                        MaterialTheme.colorScheme.surfaceVariant
                     )
                 )
             ),
@@ -70,7 +66,7 @@ fun OpenScreen(navController: NavController) {
                 text = "Bienvenido a Nuvia",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.SemiBold,
-                color = SoftInk
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -78,7 +74,7 @@ fun OpenScreen(navController: NavController) {
             Text(
                 text = "Tu compañero de bienestar",
                 fontSize = 16.sp,
-                color = SoftInk.copy(alpha = 0.8f)
+                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f)
             )
 
             Spacer(modifier = Modifier.height(48.dp))
@@ -86,18 +82,15 @@ fun OpenScreen(navController: NavController) {
             // Botones
             Button(
                 onClick = { navController.navigate(Routes.Login.route) },
-                colors = ButtonDefaults.buttonColors(containerColor = CalmBlue),
                 modifier = Modifier.fillMaxWidth(0.8f)
             ) {
-                Text(text = "Iniciar sesión", color = Color.White)
+                Text(text = "Iniciar sesión")
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
             OutlinedButton(
                 onClick = { navController.navigate(Routes.Register.route) },
-                border = ButtonDefaults.outlinedButtonBorder,
-                colors = ButtonDefaults.outlinedButtonColors(contentColor = SoftInk),
                 modifier = Modifier.fillMaxWidth(0.8f)
             ) {
                 Text(text = "Registrar")

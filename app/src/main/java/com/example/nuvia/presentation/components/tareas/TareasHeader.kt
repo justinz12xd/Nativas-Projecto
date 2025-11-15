@@ -24,7 +24,7 @@ fun TareasHeader(
             text = if (mostrarChecks) "Mis Checks" else "Tareas de la Semana",
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSecondary
+            color = MaterialTheme.colorScheme.onSurface
         )
         
         TareasSwitch(
