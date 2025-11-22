@@ -8,9 +8,13 @@ import com.example.nuvia.presentation.screens.login.LoginScreen
 import com.example.nuvia.presentation.screens.main.MainScreen
 import com.example.nuvia.presentation.screens.open_screen.OpenScreen
 import com.example.nuvia.presentation.screens.register.RegisterScreen
+import com.example.nuvia.presentation.viewmodels.ThemeViewModel
 
 @Composable
-fun NavGraph(navController: NavHostController) {
+fun NavGraph(
+    navController: NavHostController,
+    themeViewModel: ThemeViewModel
+) {
     NavHost(
         navController = navController,
         startDestination = Routes.Splash.route
@@ -40,7 +44,15 @@ fun NavGraph(navController: NavHostController) {
             )
         }
         composable(Routes.Main.route){
-            MainScreen()
+            MainScreen(
+                themeViewModel = themeViewModel,
+                onLogout = {
+                    navController.navigate(Routes.Login.route) {
+                        popUpTo(Routes.Main.route) { inclusive = true }
+                        launchSingleTop = true
+                    }
+                }
+            )
         }
     }
 }

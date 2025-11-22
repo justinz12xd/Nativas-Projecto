@@ -14,9 +14,14 @@ import com.example.nuvia.presentation.screens.profile.ProfileScreen
 import com.example.nuvia.presentation.screens.diary.DiaryScreen
 import com.example.nuvia.presentation.screens.calendario.CalendarScreen
 import com.example.nuvia.presentation.screens.recuerdos.RecuerdosScreen
+import com.example.nuvia.presentation.screens.configuracion.ConfiguracionScreen
+import com.example.nuvia.presentation.viewmodels.ThemeViewModel
 
 @Composable
-fun MainScreen() {
+fun MainScreen(
+    themeViewModel: ThemeViewModel,
+    onLogout: () -> Unit = {}
+) {
     // NavController anidado para las pantallas con navbar
     val nestedNavController = rememberNavController()
     
@@ -47,6 +52,13 @@ fun MainScreen() {
             }
             composable(Screen.Recuerdos.route) {
                 RecuerdosScreen(navController = nestedNavController)
+            }
+            composable(Screen.Configuracion.route) {
+                ConfiguracionScreen(
+                    navController = nestedNavController,
+                    themeViewModel = themeViewModel,
+                    onLogout = onLogout
+                )
             }
         }
     }

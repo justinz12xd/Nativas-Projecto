@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.PhotoLibrary
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class Screen(val route: String, val title: String, val icon: ImageVector) {
@@ -35,6 +36,11 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
         route = "recuerdos",
         title = "Recuerdos",
         icon = Icons.Default.PhotoLibrary
+    )
+    object Configuracion : Screen(
+        route = "configuracion",
+        title = "Configuración",
+        icon = Icons.Default.Settings
     )
 
 
