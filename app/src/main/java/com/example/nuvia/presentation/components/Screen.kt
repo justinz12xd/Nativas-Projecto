@@ -5,6 +5,7 @@ import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.PhotoLibrary
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class Screen(val route: String, val title: String, val icon: ImageVector) {
@@ -26,9 +27,14 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
         icon = Icons.Default.Book
     )
     object Calendario : Screen(
-        route = "calendario",
+        route = "com/example/nuvia/presentation/components/calendario",
         title = "Calendario",
         icon = Icons.Default.DateRange
+    )
+    object Recuerdos: Screen(
+        route = "recuerdos",
+        title = "Recuerdos",
+        icon = Icons.Default.PhotoLibrary
     )
 
 

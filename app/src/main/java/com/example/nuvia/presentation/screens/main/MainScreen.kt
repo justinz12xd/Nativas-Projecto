@@ -13,6 +13,7 @@ import com.example.nuvia.presentation.screens.home.HomeScreen
 import com.example.nuvia.presentation.screens.profile.ProfileScreen
 import com.example.nuvia.presentation.screens.diary.DiaryScreen
 import com.example.nuvia.presentation.screens.calendario.CalendarScreen
+import com.example.nuvia.presentation.screens.recuerdos.RecuerdosScreen
 
 @Composable
 fun MainScreen() {
@@ -44,7 +45,9 @@ fun MainScreen() {
             composable(Screen.Calendario.route) {
                 CalendarScreen(navController = nestedNavController)
             }
-
+            composable(Screen.Recuerdos.route) {
+                RecuerdosScreen(navController = nestedNavController)
+            }
         }
     }
 }

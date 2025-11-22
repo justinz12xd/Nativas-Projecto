@@ -19,6 +19,13 @@ class CalendarViewModel(
     private val _importantDates = MutableStateFlow<List<FechaImportante>>(emptyList())
     val importantDates: StateFlow<List<FechaImportante>> = _importantDates.asStateFlow()
 
+    // Estado del diálogo
+    private val _showDialog = MutableStateFlow(false)
+    val showDialog: StateFlow<Boolean> = _showDialog.asStateFlow()
+
+    // Fecha seleccionada para el diálogo
+    private val _selectedDate = MutableStateFlow<LocalDate?>(null)
+    val selectedDate: StateFlow<LocalDate?> = _selectedDate.asStateFlow()
 
     init {
         loadData()
@@ -31,20 +38,29 @@ class CalendarViewModel(
     }
 
     fun onDaySelected(date: LocalDate) {
-        // Aquí decides qué hacer:
-        // Hacer un popup, añadir nota, etc.
+        _selectedDate.value = date
+        _showDialog.value = true
     }
 
-    fun saveImportantDate(date: LocalDate, title: String) {
+    fun closeDialog() {
+        _showDialog.value = false
+        _selectedDate.value = null
+    }
+
+    fun saveImportantDate(date: LocalDate, title: String, description: String = "") {
+        if (title.isBlank()) return
+        
         viewModelScope.launch {
             addImportantDate(
                 FechaImportante(
                     id_fecha = (0..999999).random(),
                     fecha = date,
-                    titulo = title
+                    titulo = title,
+                    descripcion = description.ifBlank { null }
                 )
             )
             loadData()
+            closeDialog()
         }
     }
 }

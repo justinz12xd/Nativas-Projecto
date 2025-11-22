@@ -20,6 +20,12 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true
+    }
 
     buildTypes {
         release {
@@ -29,10 +35,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = "11"
@@ -83,6 +85,9 @@ dependencies {
     // Coil (para cargar imágenes en Compose)
     implementation("io.coil-kt:coil-compose:2.5.0")
     implementation("androidx.cardview:cardview:1.0.0")
+    
+    // Desugaring para soporte de API Java 8 (LocalDate, etc.)
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
     
     // Testing
     testImplementation(libs.junit)
