@@ -151,7 +151,6 @@ fun AddRecuerdoDialog(
         }
     }
 
-    // DatePicker (simplificado - puedes usar un picker más elaborado)
     if (showDatePicker) {
         DatePickerDialog(
             onDismissRequest = { showDatePicker = false },

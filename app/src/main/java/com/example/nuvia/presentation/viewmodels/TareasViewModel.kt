@@ -21,7 +21,6 @@ class TareasViewModel(
     private val deleteCheckUseCase: DeleteCheckUseCase
 ) : ViewModel() {
 
-    // StateFlow que observa los datos desde el repositorio
     val tareas: StateFlow<List<Tarea>> = getTareasUseCase()
         .stateIn(
             scope = viewModelScope,

@@ -9,7 +9,6 @@ import java.time.LocalDate
 
 class TareasLocalDataSource {
     
-    // Datos hardcodeados en el DataSource (capa de datos)
     private val _tareas = MutableStateFlow(
         listOf(
             Tarea(

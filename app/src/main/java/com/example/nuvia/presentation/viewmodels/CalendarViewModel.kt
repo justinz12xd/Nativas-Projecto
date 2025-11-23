@@ -19,11 +19,9 @@ class CalendarViewModel(
     private val _importantDates = MutableStateFlow<List<FechaImportante>>(emptyList())
     val importantDates: StateFlow<List<FechaImportante>> = _importantDates.asStateFlow()
 
-    // Estado del diálogo
     private val _showDialog = MutableStateFlow(false)
     val showDialog: StateFlow<Boolean> = _showDialog.asStateFlow()
 
-    // Fecha seleccionada para el diálogo
     private val _selectedDate = MutableStateFlow<LocalDate?>(null)
     val selectedDate: StateFlow<LocalDate?> = _selectedDate.asStateFlow()
 
